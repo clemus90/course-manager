@@ -28,7 +28,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
                     },
                 }}
                 helperText="this should be contained in the course description"
-                placeholder="by decription..."
+                placeholder="by description..."
             />
             <Button
                 variant="contained"
