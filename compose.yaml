@@ -1,0 +1,23 @@
+services:
+  frontend:
+    image: coursemanager-ui
+    build: ./frontend
+    ports:
+      - 8081:80
+  backend:
+    image: coursemanager-api
+    build: ./backend
+    environment:
+      DB_HOST: db
+      DB_NAME: coursemanager
+      DB_USERNAME: postgres
+      DB_PASSWORD: coursemanager
+    ports:
+      - 8080:8080
+  db:
+    image: "postgres:17-alpine"
+    environment:
+      - POSTGRES_PASSWORD=coursemanager
+      - POSTGRES_DB=coursemanager
+    ports:
+      - 5432:5432

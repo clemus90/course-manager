@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Course Manager
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coursemanager
+    username: postgres
+    password: coursemanager
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
